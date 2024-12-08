@@ -1,0 +1,128 @@
+{% extends 'commonheader.html' %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropdown</title>
+<link rel="stylesheet" href="static/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        color: #333;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #316abb;
+        padding: 10px 20px;
+        color: white;
+        height: 135px;
+    }
+    /*.navbar .logo {
+        width: 150px;
+        height: auto;
+    }*/
+    .navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+    .navbar ul li {
+        margin: 0 15px;
+        position: relative;
+    }
+    .navbar ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .navbar ul .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        color: #333;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        top: 100%;
+        left: 0;
+    }
+    .navbar ul .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+        text-decoration: none;
+        color: #333;
+    }
+    .navbar ul .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .navbar ul .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+    .my960 {
+        background: #FFF;
+        padding: 20px;
+    }
+    .my960 img {
+        border: 1px solid #ebf2f2f7;
+    }
+    .occtop {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .occtop img {
+        margin: 20px;
+    }
+    .occtopright {
+        margin-left: 20px;
+    }
+    .occtopright li {
+        margin-bottom: 20px;
+    }
+    .gotappl a {
+        text-decoration: none;
+        color: #000;
+        line-height: 42px;
+    }
+</style>
+</head>
+
+<body>
+{% block content %}
+    <div class="my960">
+        <h2 style="text-align:center; font-size: 22px; margin-left: 65px;">E-Viroguard</h2>
+        <p>BelBird Technologies brings a unique state-of-art IoT Viroguard to fight the deadly coronavirus by ensuring 100% compliance of visitor’s hygiene through temperature and sanitization monitoring.</p>
+        <div class="occtop">      
+            <a href="static/images/belbird3.png">
+                <img src="static/images/viroguard.jpg" style="width:400px; height:300px; margin:20px;">
+            </a>
+            <ul class="occtopright">
+                <li>E-Viroguard performs all functions contactless measures such as monitoring fever and sanitization. Fever measurement has a distance compensation feature unlike our competitors.</li>
+                <li>As they suffer from distance inaccuracies. Once the compliance is completed the message.</li>
+                <li>Is displayed on e-Viroguard & on registered mobile sets. After compliance, the electronic door could open by the host, or the host can open the door ignoring the warning signal.</li>
+            </ul>
+        </div>
+
+        <h2 class="gotappl">
+            <a href="https://www.youtube.com/watch?v=loE9-HkW_lM" target="_blank">Goto Application Stories</a>
+        </h2>    
+
+        <h2 class="gotappl" style="float:right; margin-right:10px;">
+            <a href="#">Benefits</a>
+        </h2>   
+        <h2 class="gotappl" style="text-align:center; margin-left: 20px;">
+            <a href="https://www.youtube.com/watch?v=t6VI44158Ys" target="_blank">Installation Video & Tips</a>
+        </h2>	   
+    </div>
+{% endblock %}
+</body>
+</html>

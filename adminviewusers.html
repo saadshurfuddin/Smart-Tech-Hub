@@ -1,0 +1,151 @@
+{% extends 'adminheader.html' %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About</title>
+</head>
+<body>
+<div class="wrapper">
+    {% block content %}
+    <link rel="stylesheet" href="static/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700,600' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #316abb;
+            padding: 10px 20px;
+            height: 120px;
+            color: white;
+        }
+        /*.navbar img.logo {
+            width: 150px;
+        }*/
+        .navbar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .navbar nav ul li {
+            margin: 0 15px;
+        }
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .navbar nav ul .dropdown {
+            position: relative;
+        }
+        .navbar nav ul .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .navbar nav ul .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+        .navbar nav ul .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar nav ul .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .menu-icon {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .navbar nav ul {
+                flex-direction: column;
+                display: none;
+            }
+            .navbar nav ul.active {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    </style>
+    <style type="text/css">
+		table, tr, td, th{
+		border:1px solid black;
+		border-collapse:collapse;
+		text-align:center;
+		font-size:18px;
+		}
+		table{
+		width:95%;
+		}
+		th,td{
+		height:50px;
+		}
+	</style>
+    <br>
+    <br>
+    <br>
+    <div class="wrapper">
+        <p>
+        <table>
+            <thead>
+                    <tr>
+                        <th>User Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>EmailId</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.FirstName}}</td>
+                        <td>{{row.LastName}}</td>
+                        <td>{{row.EmailId}}</td>
+                        <td>{{row.PhoneNumber}}</td>
+                        <td>{{row.Address}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+        </table>
+        </p>
+    </div>
+    {% endblock %}
+</div>
+
+<script>
+        function togglemenu() {
+            var menuList = document.getElementById("menuList");
+            menuList.classList.toggle("active");
+        }
+
+</script>
+</body>
+</html>

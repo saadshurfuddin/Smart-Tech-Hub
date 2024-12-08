@@ -1,0 +1,167 @@
+{% extends 'commonheader.html' %}
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Team</title>
+<link rel="stylesheet" href="static/style.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,300,700,600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* Dropdown styles */
+    body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #316abb;
+            padding: 10px 20px;
+            height: 120px;
+            color: white;
+        }
+        /*.navbar img.logo {
+            width: 150px;
+        }*/
+        .navbar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .navbar nav ul li {
+            margin: 0 15px;
+        }
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .navbar nav ul .dropdown {
+            position: relative;
+        }
+        .navbar nav ul .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .navbar nav ul .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+        .navbar nav ul .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar nav ul .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+    .menu-icon {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        .navbar nav ul {
+            flex-direction: column;
+            display: none;
+        }
+        .navbar nav ul.active {
+            display: flex;
+        }
+        .menu-icon {
+            display: block;
+            cursor: pointer;
+        }
+    }
+</style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+      <br>
+      <div class="my960" style="background:#FFF;"> 
+        <br>       
+        
+        <h2 style="text-align:center;position:relative;top:-15px;">Privacy Policy</h2>
+        <br>
+        <pre>
+This Privacy Policy describes how Belbird Technologies (“we,” “us,” or “our”) collects, 
+uses, and shares personal information when you use our website belbirdtechnologies.com 
+or any of our products/services (collectively, the “Services”).
+
+Information We Collect
+======================
+Personal Information: When you use our Site or Services, we may collect personal information such as your name,
+email address, postal address, phone number, and payment information.
+
+Usage Data: We may also collect information about how you access and use our Site and Services, 
+such as your IP address, browser type, operating system, referral URLs, and pages viewed.
+
+How We Use Your Information
+===========================
+We may use the information we collect for various purposes, including:
+
+- Providing and maintaining our Services.
+- Communicating with you about your account or our Services.
+- Personalizing your experience on our Site.
+- Improving our products and services.
+- Detecting, preventing, and addressing technical issues or fraudulent activities.
+
+We may share your personal information with third-party service providers who help us provide,
+maintain, and improve our Services. These service providers are contractually obligated to use 
+your information only as necessary to provide the services they are providing to us.
+
+We may also share your information in response to legal requests, to protect our rights or property,
+or to enforce our terms of service.
+
+Your Choices
+============
+You may choose not to provide certain personal information, but this may limit your ability to access 
+certain features of our Site or Services.
+
+You can opt-out of receiving promotional communications from us by following the unsubscribe instructions
+provided in those communications.
+
+Security
+========
+We respect your privacy and take reasonable measures to protect your personal information from unauthorized access,
+use, alteration, or disclosure.
+
+Changes to This Privacy Policy
+==============================
+We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy
+on this page.
+
+Contact Us
+==========
+If you have any questions about this Privacy Policy, please contact us on the Contact Us Page.
+            <!--<a href="contact.html" target="_blank">Click here</a>-->
+</pre>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function toggleMenu() {
+      const menuList = document.getElementById('menuList');
+      menuList.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

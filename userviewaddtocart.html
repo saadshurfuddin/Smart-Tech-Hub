@@ -1,0 +1,332 @@
+<!doctype html>
+<html>
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Belbird Technologies</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #316abb;
+            padding: 10px 20px;
+            color: white;
+        }
+        .navbar img.logo {
+            width: 150px;
+        }
+        .navbar .tagline {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-left: 20px;
+        }
+        .navbar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .navbar nav ul li {
+            margin: 0 15px;
+        }
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .navbar nav ul .dropdown {
+            position: relative;
+        }
+        .navbar nav ul .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .navbar nav ul .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+        .navbar nav ul .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar nav ul .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .hero {
+            position: relative;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+        .hero img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .hero img.active {
+            opacity: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .hero a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #b12704;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 5px;
+        }
+        .hero .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 3;
+        }
+        .hero .nav-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+        .feature {
+            background-color: white;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 40px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .feature img {
+            width: 200px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+        .feature h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .feature p {
+            font-size: 14px;
+            color: #666;
+        }
+        footer {
+            background-color: #316abb;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+    <style type="text/css">
+		table, tr, td, th{
+		border:1px solid black;
+		border-collapse:collapse;
+		text-align:center;
+		font-size:18px;
+		}
+		table{
+		width:50%;
+		}
+	</style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div>
+                <img src="static/images/1294BBT_Logo_4.png" class="logo" alt="Belbird Technologies Logo">
+                <br>Transforming Technologies For Tomorrow<sup>TM</sup>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/usermainpage">Home</a></li>
+                    <li><a href="/userviewprofile">View Profile</a></li>
+                    <!--<li><a href="/usersearchproducts">Search Products</a></li>-->
+                    <li><a href="/userviewaddtocart">View Add To Cart</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main">
+            <marquee class="marq" bgcolor="#316abb"  width="100%" height="25px"
+                     direction="left" loop="">
+                <div class="Abouts" style="color: white;">
+                    <b>About Us - </b>BelBird, a private limited company, specializes in Internet of Things (IoT) applications tailored for occupied spaces.
+                    <b>Vision - </b>IoT solutions to enhance care, comfort, and security at an affordable cost for mass uses.
+                    <b>Mission - </b>Belbird's focus on providing mobile-operated locks and switches specifically designed  for home use and enhances the security and comfort of home dwellers.
+                </div>
+            </marquee>
+        </div>
+            <section id="about" class="section about">
+<center>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-12 order-2 order-lg-1 content">
+                    <h1 class="mb-4">User View AddTo Cart Page</h1>
+                    <p>
+<table>
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>User Id</th>
+                        <th>Item Name</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.UserId}}</td>
+                        <td>{{row.ItemName}}</td>
+                        <td>{{row.Quantity}}</td>
+                        <td>{{row.Price}}</td>
+                        <td>{{row.PaymentStatus}}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <th colspan="4">
+                            {% if total>0 %}
+                            <button class="btn" id="pay-btn" style="background-color:red;color:white;">Make Payment</button>
+                            {% endif %}
+                        </th>
+                        <th>Total Amt{{total}}</th>
+                    </tr>
+                    </tbody>
+                </table>
+                    </p>
+          </div>
+        </div>
+      </div>
+    </center>
+    </section><!-- /About Section -->
+        <footer>
+            <p><strong>Belbird Technologies</strong></p>
+            <p>40, 7th Main, NN Farms, Geddalahalli Sanjaynagar, Bengaluru, Karnataka 560093 &#174; 2024</p>
+            <div class="footer-links" style="color: #ddd;">
+                <a href="/privacypolicy" style="color: #ddd;">Privacy Policy</a>
+                <!--<a href="/about" style="color: #f8f8f8;">About Us</a>
+                <a href="/contact" target="_blank" style="color: #f8f8f8;">Contact Us</a>-->
+            </div>
+        </footer>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    var options = {
+
+      // Enter the Key ID generated from the Dashboard
+      key: "{{ context.razorpay_merchant_key }}",
+
+      // Amount is in currency subunits.
+      // Default currency is INR. Hence,
+      // 50000 refers to 50000 paise
+      amount: "{{ context.razorpay_amount }}",
+      currency: "{{ context.currency }}",
+
+      // Your/store name.
+      name: "Razorpay",
+
+      // Pass the `id` obtained in the response of Step 1
+      order_id: "{{ context.razorpay_order_id }}",
+      callback_url: "{{ context.callback_url }}",
+    };
+
+    // initialise razorpay with the options.
+    var rzp1 = new Razorpay(options);
+
+    // add event listener to the payment button.
+    document.getElementById("pay-btn").onclick = function (e) {
+      rzp1.open();
+      e.preventDefault();
+    };
+  </script>
+
+    <script>
+        const images = document.querySelectorAll('.hero img');
+        const nextButton = document.getElementById('next');
+        const prevButton = document.getElementById('prev');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        });
+
+        showImage(currentIndex);
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }, 4000);
+    </script>
+</body>
+</html>

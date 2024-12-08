@@ -1,0 +1,117 @@
+{% extends 'commonheader.html' %}
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Consortium Partners</title>
+<link rel="stylesheet" href="static/style.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700,600' rel='stylesheet' type='text/css'>
+<style>
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #316abb;
+    padding: 10px 20px;
+    height: 120px;
+  }
+  .navbar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  .navbar nav ul li {
+    position: relative;
+    margin-right: 10px; /* Reduced margin */
+  }
+  .navbar nav ul li a {
+    display: block;
+    padding: 15px 5px; /* Reduced padding */
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+  }
+  .navbar nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar nav ul li .dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+  }
+  .navbar nav ul li:hover .dropdown-content {
+    display: block;
+  }
+  .menu-icon {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .navbar nav ul {
+      flex-direction: column;
+      display: none;
+    }
+    .navbar nav ul.active {
+      display: flex;
+    }
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+    {% block content %}
+    <br>
+    <div class="my960" style="background:#FFF;">
+      <h2 style="position:relative; top:10px; font-size:26px; margin-bottom:5px;">
+        Forged Alliance with Startups for Collaborative Innovations
+        <hr style="size:2px; width:780px;">
+      </h2>
+      <div class="consortium-partners" style="background-color:#FFF;">
+        <div class="consor-pic" style="width:140px; height:120px; margin-top:30px;">
+          <img src="static/images/image1.png" alt="Partner 1">
+        </div>
+        <div class="consor-about" style="margin-top:34px;">
+          Develop solutions in the area of IaaS, PaaS, and SaaS. The team is highly proficient in custom Apps and OpenSource solutions.
+        </div>
+      </div>
+      <div class="consortium-partners" style="background-color:#FFEFE8;">
+        <div class="consor-pic">
+          <img src="static/images/image21.png" style="width:140px; height:120px; margin-top:2px;" alt="Partner 2">
+          <a href="http://www.crafitti.com/" target="_blank">Crafitti Innovation Services</a>
+        </div>
+        <div class="consor-about" style="margin-top:20px;">
+          Idea Crafting, Embedding Innovation DNA, Decision Crafting, Opportunity Finding, Enabling strong patent creation.
+        </div>
+      </div>
+      <div class="consortium-partners" style="background-color:#FFF;">
+        <div class="consor-pic">
+          <img src="static/images/image23.png" style="width:140px; height:120px;" alt="Partner 3">
+        </div>
+        <div class="consor-about" style="margin-top:40px;">
+          Develop customized Voice and Data communication solutions.
+        </div>
+      </div>
+      <div class="consortium-partners" style="background-color:#FFEFE8;">
+        <div class="consor-pic">
+          <img src="static/images/image24.png" style="width:140px; height:120px;" alt="Partner 4">
+          <a href="http://www.bmsce.com/" target="_blank">BMSCE</a>
+        </div>
+        <div class="consor-about" style="margin-top:35px;">
+          Virtual Lab in Premier BMSCE Engineering college to quickly test the ideas.
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+  </div>
+</body>
+</html>

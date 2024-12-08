@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Cart - Belbird Technologies</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:  #f8f8f8;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #316abb;
+            padding: 10px 20px;
+            color: white;
+            height: 150px; /* Fixed height for consistency */
+            box-sizing: border-box;
+        }
+        .navbar img.logo {
+            width: 150px;
+        }
+
+        .navbar .tagline {
+        font-size: 14px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-left: 20px;
+        }
+        .navbar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .navbar nav ul li {
+            margin: 0 15px;
+        }
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: none;
+        }
+        .navbar nav ul .dropdown {
+            position: relative;
+        }
+        .navbar nav ul .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .navbar nav ul .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+        .navbar nav ul .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar nav ul .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .cart-content {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .cart-content h1 {
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+        }
+        .cart-content p {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+        }
+        .cart-content .cart-items {
+            margin: 20px 0;
+        }
+        .cart-content .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-content .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-content .cart-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .cart-content .cart-item-details {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .cart-content .cart-item-details h4 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .cart-content .cart-item-details p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .cart-content .cart-item-actions {
+            text-align: right;
+        }
+        .cart-content .cart-item-actions button {
+            background-color: #b12704;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+        .cart-content .quantity {
+            display: flex;
+            align-items: center;
+        }
+        .cart-content .quantity input {
+            width: 40px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+        .cart-content .quantity button {
+            background-color: #316abb;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #316abb;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        .checkout {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .checkout form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .checkout form label {
+            font-weight: bold;
+        }
+        .checkout form input[type="text"], .checkout form input[type="email"], .checkout form input[type="tel"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .checkout form input[type="text"]:focus, .checkout form input[type="email"]:focus, .checkout form input[type="tel"]:focus {
+            outline: none;
+            border-color: #316abb;
+        }
+        .checkout button {
+            background-color: #316abb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        .checkout button:hover {
+            background-color: #24578c;
+        }
+        .support-button {
+            background-color: #316abb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .modal-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .modal-content form label {
+            display: block;
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+        .modal-content form input, .modal-content form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .modal-content form textarea {
+            resize: vertical;
+        }
+        .modal-content button {
+            background-color: #316abb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+        }
+        .modal-content .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .modal-content .close:hover,
+        .modal-content .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div>
+                <a href="/index"></a><img src="static/images/1294BBT_Logo_4.png" class="logo" alt="Belbird Technologies Logo" height="85"></a>
+                <br>Transforming Technologies For Tomorrow<sup>TM</sup>
+
+            </div>
+            <nav>
+<ul>
+                    <li><a href="/home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Events</a>
+                        <div class="dropdown-content">
+                            <a href="/journey">Journey</a>
+                            <a href="/news">News/Blogs</a>
+                            <a href="/future">Future Roadmap</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Products</a>
+                        <div class="dropdown-content">
+                            <a href="/surveillance">BelBird M-Lock</a>
+                            <a href="/switch">BelBird M-Switch</a>
+                            <a href="/noncamera">Non-camera E-surveillance solutions</a>
+                            <a href="/eviroguard">E-Viroguard</a>
+                            <a href="/facecontrol">Face recognition Access Control station</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">About Us</a>
+                        <div class="dropdown-content">
+                            <a href="/about">About Us</a>
+                            <a href="/advisors">Advisors</a>
+                            <a href="/consortium">Consortium Partners</a>
+                            <a href="/privacypolicy">Privacy Policy</a>
+                        </div>
+                    </li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/cart">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+         
+        <div class="cart-content">
+            <h1>Your Cart</h1>
+            <p>Select a product to add:</p>
+            <div>
+                <select id="productSelect">
+                    <option value="BelBird M-Lock">BelBird M-Lock - INR </option>
+                    <option value="BelBird M-Switch">BelBird M-Switch - INR</option>
+                    <option value="Non-camera E-surveillance solutions">Non-camera E-surveillance solutions - INR</option>
+                    <option value="e-Viroguard">e-Viroguard - INR</option>
+                    <option value="Face recognition Access Control station">Face recognition Access Control station - INR</option>
+                </select>
+                <button onclick="addToCartFromSelect()">Add to Cart</button>
+            </div>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="checkout">
+                <h2>Checkout</h2>
+                <form onsubmit="submitForm(event)">
+                    <label for="name">Purchaser Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Contact Number:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+                    <button type="submit">Submit Order</button>
+                </form>
+            </div>
+        </div>
+
+        <button class="support-button" onclick="openModal()">Customer Support</button>
+
+        <footer>
+            <p><strong>Belbird Technologies</strong></p>
+            <p>40, 7th Main, NN Farms, Geddalahalli Sanjaynagar, Bengaluru, Karnataka 560093 &#174; 2024</p>
+            <a href="privacypolicy.html" style="color: #ddd;">Privacy Policy</a>
+            <a href="about.html" style="color: #ddd;">About Us</a>
+            <a href="contact.html" style="color: #ddd;">Contact Us</a>
+        </footer>
+    </div>
+
+    <div id="supportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Customer Support</h2>
+            <form onsubmit="submitSupportForm(event)">
+                <label for="supportName">Name:</label>
+                <input type="text" id="supportName" name="supportName" required>
+                <br>
+
+                <label for="productID">Product ID:</label>
+                <input type="text" id="productID" name="productID" required>
+
+                <label for="supportEmail">Email:</label>
+                <input type="email" id="supportEmail" name="supportEmail" required>
+
+                <label for="supportPhone">Mobile Number:</label>
+                <input type="tel" id="supportPhone" name="supportPhone" pattern="[0-9]{10}" required>
+
+                <label for="supportQuery">Query/Problem:</label>
+                <textarea id="supportQuery" name="supportQuery" rows="4" required></textarea>
+
+                <button type="submit">Submit Query</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let cartItems = [];
+
+        function addToCart(productName, price, imageUrl) {
+            cartItems.push({ productName, price, imageUrl });
+            displayCartItems();
+        }
+
+        function displayCartItems() {
+            let cartItemsContainer = document.querySelector('.cart-items');
+            cartItemsContainer.innerHTML = '';
+            
+            cartItems.forEach(item => {
+                let cartItemHTML = `
+                    <div class="cart-item">
+                        <img src="${item.imageUrl}" alt="${item.productName}">
+                        <div class="cart-item-details">
+                            <h4>${item.productName}</h4>
+                            <p>INR ${item.price.toFixed(2)}</p>
+                        </div>
+                        <div class="cart-item-actions quantity">
+                            
+                            <button onclick="decrementQuantity(this)">-</button>
+                            <input type="text" value="1" onchange="updateQuantity(this)">
+                            <button onclick="incrementQuantity(this)">+</button>&nbsp;
+                            <button onclick="removeCartItem(this)">Remove</button>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.innerHTML += cartItemHTML;
+            });
+        }
+
+        function addToCartFromSelect() {
+            var select = document.getElementById('productSelect');
+            var selectedOption = select.options[select.selectedIndex];
+            var productName = selectedOption.text.split(' - ')[0];
+            var price = parseFloat(selectedOption.text.split(' - ')[1].replace('INR ', ''));
+
+            var imageUrl;
+            switch (productName) {
+                case 'BelBird M-Lock':
+                    imageUrl = 'static/images/3328Belbird m_lock.jpg';
+                    break;
+                case 'BelBird M-Switch':
+                    imageUrl = 'static/images/switch.jpeg';
+                    break;
+                case 'Non-camera E-surveillance solutions':
+                    imageUrl = 'static/images/non-camera.jpg';
+                    break;
+                case 'e-Viroguard':
+                    imageUrl = 'static/images/e-viroguard.jpg';
+                    break;
+                case 'Face recognition Access Control station':
+                    imageUrl = 'static/images/face-recognition.jpg';
+                    break;
+                default:
+                    imageUrl = 'static/images/product_placeholder.jpg';
+                    break;
+            }
+
+            addToCart(productName, price, imageUrl);
+        }
+
+        function removeCartItem(button) {
+            var cartItem = button.closest('.cart-item');
+            cartItem.remove();
+        }
+
+        function incrementQuantity(button) {
+            var input = button.parentElement.querySelector('input');
+            var currentValue = parseInt(input.value);
+            input.value = currentValue + 1;
+        }
+
+        function decrementQuantity(button) {
+            var input = button.parentElement.querySelector('input');
+            var currentValue = parseInt(input.value);
+            if (currentValue > 1) {
+                input.value = currentValue - 1;
+            }
+        }
+
+        function updateQuantity(input) {
+            var value = parseInt(input.value);
+            if (value < 1) {
+                input.value = 1;
+            }
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let phone = document.getElementById('phone').value;
+
+            let formData = {
+                name,
+                email,
+                phone,
+                cartItems
+            };
+
+            alert(JSON.stringify(formData, null, 2));
+            // You can handle form submission or further processing here
+        }
+
+        function openModal() {
+            document.getElementById('supportModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('supportModal').style.display = "none";
+        }
+
+        function submitSupportForm(event) {
+            event.preventDefault();
+
+            let supportName = document.getElementById('supportName').value;
+            let productID = document.getElementById('productID').value;
+            let supportEmail = document.getElementById('supportEmail').value;
+            let supportPhone = document.getElementById('supportPhone').value;
+            let supportQuery = document.getElementById('supportQuery').value;
+
+            let supportData = {
+                supportName,
+                productID,
+                supportEmail,
+                supportPhone,
+                supportQuery
+            };
+
+            alert(JSON.stringify(supportData, null, 2));
+            // You can handle form submission or further processing here
+        }
+
+        window.onclick = function(event) {
+            let modal = document.getElementById('supportModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>User Login Page</title>
+<link rel="stylesheet" href="static/style.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700,600' rel='stylesheet' type='text/css'>
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color:  #f8f8f8;
+        color: #333;
+    }
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #316abb;
+        padding: 10px 20px;
+        color: white;
+        height: 150px; /* Fixed height for consistency */
+        box-sizing: border-box;
+    }
+    .navbar img.logo {
+        width: 150px;
+    }
+    .navbar .tagline {
+        font-size: 14px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-left: 20px;
+    }
+    .navbar nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar nav ul li {
+        margin: 0 15px;
+    }
+
+    .navbar nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: none;
+    }
+
+    .navbar nav ul .dropdown {
+        position: relative;
+    }
+
+    .navbar nav ul .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        color: #333;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .navbar nav ul .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .navbar nav ul .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .navbar nav ul .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+</style>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("ZbGcGorymE2kAN1uz"); // Replace with your user ID
+    })();
+</script>
+<script type="text/javascript">
+    function sendMail(event) {
+        event.preventDefault();
+
+        var templateParams = {
+            first_name: document.getElementById('first_name').value,
+            last_name: document.getElementById('last_name').value,
+            email: document.getElementById('email').value,
+            mobile: document.getElementById('mobile').value,
+            message: document.getElementById('message').value
+        };
+
+        emailjs.send('service_i1zqh4b', 'template_49pjky4', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert("Message sent successfully!");
+            }, function(error) {
+                console.log('FAILED...', error);
+                alert("Failed to send the message. Please try again.");
+            });
+    }
+</script>
+</head>
+<body>
+
+
+    <div class="navbar">
+        <div>
+            <img src="static/images/1294BBT_Logo_4.png" class="logo" alt="Belbird Technologies Logo">
+        </div>
+        <nav>
+<ul>
+                    <li><a href="/home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Events</a>
+                        <div class="dropdown-content">
+                            <a href="/journey">Journey</a>
+                            <a href="/news">News/Blogs</a>
+                            <a href="/future">Future Roadmap</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Products</a>
+                        <div class="dropdown-content">
+                            <a href="/surveillance">BelBird M-Lock</a>
+                            <a href="/switch">BelBird M-Switch</a>
+                            <a href="/noncamera">Non-camera E-surveillance solutions</a>
+                            <a href="/eviroguard">E-Viroguard</a>
+                            <a href="/facecontrol">Face recognition Access Control station</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">About Us</a>
+                        <div class="dropdown-content">
+                            <a href="/about">About Us</a>
+                            <a href="/advisors">Advisors</a>
+                            <a href="/consortium">Consortium Partners</a>
+                            
+                        </div>
+                    </li>
+                    <!-- <li><a href="/newuser">New User</a></li> -->
+                    <li><a href="/userlogin">User Login</a></li>
+                    <li><a href="/adminlogin">Admin Login</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    
+                </ul>
+        </nav>
+        </div>
+    </div>
+
+    <div class="contactUs">
+        <div class="title">
+            <h2>Get in Touch</h2>
+        </div>
+        <div class="box">
+            <div class="contact form">
+                <h3>{{msg}}</h3>
+                <form action="/userlogin" method="post">
+                    <div class="formbox">
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>User Name</span>
+                                <input type="text" id="uname" placeholder="User Name" name="uname" required>
+                            </div>
+                            <div class="inputBox">
+                                <span>Password</span>
+                                <input type="password" id="pwd" placeholder="Password" name="pwd" required>
+                            </div>
+                        </div>
+                        <div class="row100">
+                            <div class="inputBox">
+                                <input type="submit" value="User Login"> &nbsp; &nbsp;
+                                <a href="/newuser">New User</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</div>
+<footer style="background-color: #316abb; padding: 10px; text-align: center; position: static; bottom: 0; width: 100%;">
+    <p><strong>Belbird Technologies</strong></p>
+    <p>40, 7th Main, NN Farms, Geddalahalli Sanjaynagar, Bengaluru, Karnataka 560093 	&#174; 2024</p>
+    <a href="/privacypolicy" style="color: #ddd;">Privacy Policy</a>
+    <a href="/about" style="color: #ddd;">About Us</a>
+    <a href="/contact" style="color: #ddd;">Contact Us</a>
+</footer>
+</body>
+</html>

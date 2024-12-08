@@ -1,0 +1,111 @@
+{% extends 'commonheader.html' %}
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Non-camera E-surveillance Solutions</title>
+<link rel="stylesheet" href="static/style.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* Basic styles for the navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #316abb; /* Adjust to match your site's color scheme */
+        padding: 10px 20px;
+        height: 120px;
+        color: white;
+    }
+    .nav-left {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-left li {
+        margin-right: 20px;
+    }
+    .nav-left img {
+        vertical-align: middle;
+    }
+    .nav-right {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-right li {
+        position: relative;
+        margin-left: 20px;
+    }
+    .nav-right a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px; /* Adjust font size to match previous code */
+    }
+    .nav-right .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        color: black;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .nav-right .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+        text-decoration: none;
+    }
+    .nav-right .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .nav-right .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+            {% block content %}
+            <br>
+            <br>
+            <div class="my960" style="background:#FFF;">
+                <h2 style="text-align:center; position:relative; top:-10px; font-size: 22px; margin-left: 65px;">Non-camera E-surveillance solutions</h2>
+                <p style="color: black;">BelBird Technologies brings a unique non-camera-based surveillance solution to protect homes and apartment complexes. Our solution is based on sensors and proprietary software applications running on servers and mobile devices. Unlike a camera-based solution, no discomfort and privacy risk, is hidden so cannot be broken, raise an alarm in real time, 30-50% less expensive and simple installation.</p>
+
+                <div class="appbody">
+                    <div class="occtop">
+                        <a href="static/images/belbird3.png">
+                            <img src="static/images/07.11.2023_11.13.13_REC.png" style="float:left; width:400px; height:300px; position:relative; top:20px; margin:20px; border:1px solid #07227998;" alt="Belbird Non-camera E-surveillance">
+                        </a>
+                        <ol class="occtopright">
+                            <li style="margin-bottom:20px; margin-left:8px;">BelBird e-Surveillance system adds surveillance capability to spaces without using the camera.</li>
+                            <li style="margin-bottom:20px; margin-left:8px;">Surveillance of spaces to identify intruders without affecting the privacy of legitimate occupants.</li>
+                            <li style="margin-bottom:20px; margin-left:8px;">In addition, it addresses the care needs of elders/children etc.</li>
+                        </ol>
+                    </div>
+
+                    <h2 class="gotappl">
+                        <a href="https://www.youtube.com/watch?v=t6VI44158Ys" target="_self" style="text-decoration:none; color:#000; line-height:42px;">Goto Application Stories</a>
+                    </h2>
+                    <h2 class="gotappl" style="width:120px; float:right; margin-right:10px;">
+                        <a href="#" style="text-decoration:none; color:#000; line-height:42px;">Benefits</a>
+                    </h2>
+                    <h2 class="gotappl" style="width:600px; margin:0 auto;">
+                        <a href="https://www.youtube.com/watch?v=t6VI44158Ys" target="_self" style="text-decoration:none; color:#000; line-height:42px;">Installation Video & Tips</a>
+                    </h2>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+    <!---  <footer>
+        <p><strong>Belbird Technologies</strong></p>
+        <p>40, 7th Main, NN Farms, Geddalahalli Sanja, Bengaluru, Karnataka 560093  &#174; 2024</p>
+    </footer> -->
+</body>
+</html>

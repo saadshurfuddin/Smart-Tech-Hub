@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>News - Belbird Technologies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #244e89;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #316abb;
+            padding: 10px 20px;
+            color: white;
+            height: 140px;
+            position: relative; /* Allows absolute positioning of tagline */
+        }
+        .navbar img.logo {
+            width: 150px;
+            display: block;
+        }
+        .navbar .tagline {
+            position: absolute;
+            bottom: 10px; /* Adjust this value as needed */
+            left: 10px; /* Align with logo if needed */
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-left: 20px;
+        }
+        
+        .navbar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .navbar nav ul li {
+            margin: 0 15px;
+        }
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .navbar nav ul .dropdown {
+            position: relative;
+        }
+        .navbar nav ul .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .navbar nav ul .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+        .navbar nav ul .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar nav ul .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .hero {
+            background: url('images/hero-image.jpg') no-repeat center center/cover;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero h1 {
+            color: white;
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .news-container {
+            display: flex;
+            /*flex-wrap: wrap;*/   
+            gap: 20px;
+        }
+        .news-item {
+            flex: 1 1 calc(50% - 20px);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+        .news-item img {
+            width: 50%;
+            height: 300px;
+            border-radius: 5px;
+        }
+        .news-item:hover {
+            transform: translateY(-10px);
+        }
+        .news-item h3 {
+            margin-top: 10px;
+            font-size: 24px;
+        }
+        .news-item p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #316abb;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            .news-item {
+                flex: 1 1 100%;
+            }
+            .navbar nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/index"><img src="static/images/1294BBT_Logo_4.png" class="logo" alt="Belbird Technologies"></a>
+        <div class="tagline">Transforming Technologies For Tomorrow<sup>TM</sup></div>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Events</a>
+                    <div class="dropdown-content">
+                        <a href="/journey">Journey</a>
+                        <a href="/news">News/Blogs</a>
+                        <a href="/future">Future Roadmap</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/surveillance">BelBird M-Lock</a>
+                        <a href="/switch">BelBird M-Switch</a>
+                        <a href="/noncamera">Non-camera E-surveillance solutions</a>
+                        <a href="/eviroguard">E-Viroguard</a>
+                        <a href="/facecontrol">Face recognition Access Control station</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="/about">About Us</a>
+                        <a href="/advisors">Advisors</a>
+                        <a href="/consortium">Consortium Partners</a>
+                        
+                    </div>
+                </li>
+                <!-- <li><a href="/newuser">New User</a></li> -->
+                <li><a href="/userlogin">User Login</a></li>
+                <li><a href="/adminlogin">Admin Login</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="hero">
+        <h1>Belbird Technologies News/Blogs</h1>
+    </div>
+
+    <div class="content">
+        <div class="news-container">
+            <div class="news-item">
+                <img src="static/images/elivate1.png" alt="Elevate 2019 Winner">
+                <h3>BelBird Technologies Wins Elevate 2019</h3>
+                <p>BelBird Technologies is a winner of Elevate 2019. And shortlisted for receiving seed funding from Karnataka Startup Cell for converting their Ideas to PoC.</p>
+            </div>
+            <div class="news-item">
+                <img src="static/images/elivate2.png" alt="Elevate 2019">
+                <h3>Elevate 2019 Recognition</h3>
+                <p>Our innovative solutions have been recognized and supported for further development and market introduction.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Belbird Technologies</strong></p>
+        <p>40, 7th Main, NN Farms, Geddalahalli Sanjaynagar, Bengaluru, Karnataka 560093 &#174; 2024</p>
+        <div class="footer-links" style="color: #ddd;">
+            <a href="/privacypolicy" style="color: #ddd;">Privacy Policy</a>
+            <a href="/about" style="color: #f8f8f8;">About Us</a>
+            <a href="/contact" target="_blank" style="color: #f8f8f8;">Contact Us</a>
+        </div>
+    </footer>
+</body>
+</html>

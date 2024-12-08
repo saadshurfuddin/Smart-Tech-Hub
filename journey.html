@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belbird Technologies</title>
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #316abb;
+            padding: 10px 20px;
+            color: white;
+            height: 165px;
+            position: relative;
+        }
+
+        .navbar img.logo {
+            width: 150px;
+        }
+
+        .navbar .tagline {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .navbar ul .dropdown {
+            position: relative;
+        }
+
+        .navbar ul .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .navbar ul .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .navbar ul .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .navbar ul .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-section {
+            margin-bottom: 100px;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-section.journey {
+            background-color: #f0f0f0;
+        }
+
+        .timeline-section.roadmap {
+            background-color: #e8f7ff;
+        }
+
+        .timeline-section h1 {
+            text-align: center;
+            color: #316abb;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #316abb;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            cursor: pointer;
+        }
+
+        .timeline-item::after {
+            content: ' ';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: #316abb;
+            border: 4px solid #fff;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item.right::after {
+            left: -16px;
+        }
+
+        .timeline-item .year {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .timeline-item .year::after {
+            content: '\2192';
+            font-size: 1.5em;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 20px 30px;
+            background-color: #316abb;
+            position: relative;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .content h2 {
+            margin-top: 0;
+        }
+
+        .minimize-button, .maximize-button {
+            background-color: #fff;
+            color: #316abb;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .maximize-button {
+            display: none;
+        }
+
+        footer {
+            background-color: #316abb;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: static;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <img src="static/images/1294BBT_Logo_4.png" class="logo" alt="Belbird Technologies Logo">
+            <div class="tagline">Transforming Technologies For Tomorrow<sup>TM</sup></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Events</a>
+                    <div class="dropdown-content">
+                        <a href="/journey">Journey</a>
+                        <a href="/news">News/Blogs</a>
+                        <a href="/future">Future Roadmap</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/surveillance">BelBird M-Lock</a>
+                        <a href="/switch">BelBird M-Switch</a>
+                        <a href="/noncamera">Non-camera E-surveillance solutions</a>
+                        <a href="/eviroguard">E-Viroguard</a>
+                        <a href="/facecontrol">Face recognition Access Control station</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="/about">About Us</a>
+                        <a href="/advisors">Advisors</a>
+                        <a href="/consortium">Consortium Partners</a>
+                        
+                    </div>
+                </li>
+                <!-- <li><a href="/newuser">New User</a></li> -->
+                <li><a href="/userlogin">User Login</a></li>
+                <li><a href="/adminlogin">Admin Login</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <!-- Belbird Journey Section -->
+        <div class="timeline-section journey">
+            <h1>Belbird Journey</h1>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="year">2018</div>
+                    <div class="content">
+                        <h2></h2>
+                        <p>Incorporated: 4th October 2018</p>
+                        <button class="minimize-button" onclick="toggleContent(this)">Minimize</button>
+                        <button class="maximize-button" onclick="toggleContent(this)">Maximize</button>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="year">2019</div>
+                    <div class="content">
+                        <h2></h2>
+                        <p>First development order: Nov 2019</p>
+                        <p>DIPP approval: Jan 2019</p>
+                        <p>Startup recognition from DRDO: Feb 2019</p>
+                        <p>MOU with BMSCE: June 2019</p>
+                        <p>Winner Elevate: July 2019</p>
+                        <p>Karnataka Startup Recognition: Aug 2019</p>
+                        <button class="minimize-button" onclick="toggleContent(this)">Minimize</button>
+                        <button class="maximize-button" onclick="toggleContent(this)">Maximize</button>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="year">2020</div>
+                    <div class="content">
+                        <h2></h2>
+                        <p>Pre-incubation at Nexus Startup hub @ American center: Feb 2020</p>
+                        <button class="minimize-button" onclick="toggleContent(this)">Minimize</button>
+                        <button class="maximize-button" onclick="toggleContent(this)">Maximize</button>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="year">2021</div>
+                    <div class="content">
+                        <h2></h2>
+                        <p>Development e-viroguard: 2021</p>
+                        <button class="minimize-button" onclick="toggleContent(this)">Minimize</button>
+                        <button class="maximize-button" onclick="toggleContent(this)">Maximize</button>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="year">2022</div>
+                    <div class="content">
+                        <h2></h2>
+                        <p>Face Recognition Access: 2022</p>
+                        <button class="minimize-button" onclick="toggleContent(this)">Minimize</button>
+                        <button class="maximize-button" onclick="toggleContent(this)">Maximize</button>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="year">2023</div>
+                    <div class="content">
+                        <h2></h2>
+                        <p>BelBird M-Lock Beta Testing: 2023</p>
+                        <button class="minimize-button" onclick="toggleContent(this)">Minimize</button>
+                        <button class="maximize-button" onclick="toggleContent(this)">Maximize</button>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="year">2024</div>
+                    <div class="content">
+                        <h2></h2>
+                        <p>1. Future Achievements Planned.</p>
+                        <p>2. Launch of BelBird Mobile Lock and BelBird Mobile Switch. Products available through India Mart from July 2024.</p>
+                        <p>3. Selected for Liftoff program under umbrella of Wadhavani Foundation </p>
+                        <a href="https://wadhwanifoundation.org/programs/liftoff/" target="_blank" style="color: black;">Click here to know more</a>
+                        <br>
+                        <button class="minimize-button" onclick="toggleContent(this)">Minimize</button>
+                        <button class="maximize-button" onclick="toggleContent(this)">Maximize</button>
+                    </div>
+                </div>
+                <p><a href="/future" target="_blank" style="color: #316abb;">Future Roadmap</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Belbird Technologies</strong></p>
+        <p>40, 7th Main, NN Farms, Geddalahalli Sanjaynagar, Bengaluru, Karnataka 560093 &#174; 2024</p>
+        <div class="footer-links">
+            <a href="/privacypolicy">Privacy Policy</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleContent(button) {
+            var content = button.parentElement;
+            var minimizeButton = content.querySelector('.minimize-button');
+            var maximizeButton = content.querySelector('.maximize-button');
+            content.classList.toggle('show');
+            if (content.classList.contains('show')) {
+                minimizeButton.style.display = 'inline-block';
+                maximizeButton.style.display = 'none';
+                content.querySelectorAll('p, h2').forEach(element => element.style.display = 'block');
+            } else {
+                minimizeButton.style.display = 'none';
+                maximizeButton.style.display = 'inline-block';
+                content.querySelectorAll('p, h2').forEach(element => element.style.display = 'none');
+            }
+        }
+
+        // Open all content sections by default
+        document.querySelectorAll('.content').forEach(content => {
+            content.classList.add('show');
+            content.querySelector('.maximize-button').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

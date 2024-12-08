@@ -1,0 +1,110 @@
+{% extends 'commonheader.html' %}
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BelBird M-Switch</title>
+<link rel="stylesheet" href="static/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* Ensure your existing styles are included here */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #316abb; /* Adjust to match your site's color scheme */
+        padding: 10px 20px;
+        height: 120px;
+        color: white;
+    }
+    .nav-left {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-left li {
+        margin-right: 20px;
+    }
+    .nav-left img {
+        vertical-align: middle;
+    }
+    .nav-right {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-right li {
+        position: relative;
+        margin-left: 20px;
+    }
+    .nav-right a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px; /* Adjust font size to match previous code */
+    }
+    .nav-right .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        color: black;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .nav-right .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+        text-decoration: none;
+    }
+    .nav-right .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .nav-right .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+</style>
+</head>
+
+<body>
+    <div class="wrapper">        
+        {% block content %}
+
+
+        <br>
+        <br>
+        <br>
+
+            <br>
+            <div class="my960" style="background:#FFF;">
+                <br>
+                <h2 style="text-align:center; position:relative; top:-10px; margin-left: 65px;">BelBird M-Switch</h2>
+                <br>
+                <p style="color: black;">BelBird Technologies introduces the innovative M-Switch for advanced control and automation. M-Switches are designed to offer seamless integration, intuitive controls, and enhanced security features. Users can easily manage their home or office environments with just a touch.</p>
+                <div class="appbody">      
+                    <div class="occtop">
+                        <a href="static/images/belbird3.png">
+                            <img src="static/images/IMG_6340.jpg" style="float:left; width:400px; height:300px; position:relative; top:20px; margin:20px; border:1px solid #07227998;" alt="Belbird M-Switch">
+                        </a>
+                        <ul class="occtopright">
+                            <li style="margin-bottom:10px; margin-left:9px;">
+                                Enjoy the ease and comfort of operating electrical and electronic devices through your Mobile App.
+                                <li>IOT enabling: Customize and Automate your electrical equipment Switching ON/OFF operations through Mobile App</li>
+                            </li>
+                            <li style="margin-bottom:20px; margin-left:8px;">
+                                Comes with Device Controller Unit to fit/mount electrical equipment and Mobile App to control the Switch functionality.
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <h2 class="gotappl"><a href="/switchinfo" target="_blank" style="text-decoration:none; text-align:center; color:#000; line-height:30px;">Go to Application Stories</a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

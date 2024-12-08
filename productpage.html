@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product - Belbird Technologies</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #316abb;
+            padding: 10px 20px;
+            color: white;
+        }
+        .navbar img.logo {
+            width: 150px;
+        }
+        .navbar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .navbar nav ul li {
+            margin: 0 15px;
+        }
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .navbar nav ul .dropdown {
+            position: relative;
+        }
+        .navbar nav ul .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .navbar nav ul .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+        .navbar nav ul .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar nav ul .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .product-form {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-form h1 {
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-group input[type="text"], 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .form-group input[type="number"] {
+            width: calc(100% - 20px); /* Adjusting for padding */
+        }
+        .form-group input[type="submit"] {
+            background-color: #316abb;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #316abb;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div>
+                <img src="static/images/1294BBT_Logo_4.png" class="logo" alt="Belbird Technologies Logo">
+            </div>
+            <nav>
+<ul>
+                    <li><a href="/home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Events</a>
+                        <div class="dropdown-content">
+                            <a href="/journey">Journey</a>
+                            <a href="/news">News/Blogs</a>
+                            <a href="/future">Future Roadmap</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Products</a>
+                        <div class="dropdown-content">
+                            <a href="/surveillance">BelBird M-Lock</a>
+                            <a href="/switch">BelBird M-Switch</a>
+                            <a href="/noncamera">Non-camera E-surveillance solutions</a>
+                            <a href="/eviroguard">E-Viroguard</a>
+                            <a href="/facecontrol">Face recognition Access Control station</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">About Us</a>
+                        <div class="dropdown-content">
+                            <a href="/about">About Us</a>
+                            <a href="/advisors">Advisors</a>
+                            <a href="/consortium">Consortium Partners</a>
+                            <a href="/privacypolicy">Privacy Policy</a>
+                        </div>
+                    </li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/cart">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="product-form">
+            <h1>Add Product</h1>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" name="productDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price</label>
+                    <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add Product">
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p><strong>Belbird Technologies</strong></p>
+            <p>40, 7th Main, NN Farms, Geddalahalli Sanjaynagar, Bengaluru, Karnataka 560093 &#174; 2024</p>
+            <a href="/privacypolicy" style="color: white;">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>

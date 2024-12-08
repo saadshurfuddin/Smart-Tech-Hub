@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belbird Future Roadmap</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #316abb;
+            padding: 10px 20px;
+            height: 140px; /* Adjusted for tagline */
+            color: white;
+            position: relative; /* Allows absolute positioning of tagline */
+        }
+        .navbar img.logo {
+            width: 150px;
+        }
+        .navbar .tagline {
+            position: absolute;
+            bottom: 10px; /* Adjust this value as needed */
+            left: 20px; /* Align with logo if needed */
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .navbar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        .navbar nav ul li {
+            margin: 0 15px;
+        }
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .navbar nav ul .dropdown {
+            position: relative;
+        }
+        .navbar nav ul .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+        .navbar nav ul .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+        .navbar nav ul .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar nav ul .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .timeline {
+            list-style-type: none;
+            padding: 0;
+        }
+        .timeline-item {
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .active .content {
+            display: block;
+        }
+        footer {
+            background-color: #316abb;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        .footer-links a {
+            color: #ddd;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/index"><img src="static/images/1294BBT_Logo_4.png" class="logo" width="150px" height="85" alt="Belbird Logo"></a>
+        <div class="tagline">Transforming Technologies For Tomorrow<sup>TM</sup></div>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Events</a>
+                    <div class="dropdown-content">
+                        <a href="/journey">Journey</a>
+                        <a href="/news">News/Blogs</a>
+                        <a href="/future">Future Roadmap</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="/surveillance">BelBird M-Lock</a>
+                        <a href="/switch">BelBird M-Switch</a>
+                        <a href="/noncamera">Non-camera E-surveillance solutions</a>
+                        <a href="/eviroguard">E-Viroguard</a>
+                        <a href="/facecontrol">Face recognition Access Control station</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="/about">About Us</a>
+                        <a href="/advisors">Advisors</a>
+                        <a href="/consortium">Consortium Partners</a>
+                        
+                    </div>
+                </li>
+                <!-- <li><a href="/newuser">New User</a></li> -->
+                <li><a href="/userlogin">User Login</a></li>
+                <li><a href="/adminlogin">Admin Login</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="timeline-section roadmap">
+        <h3>Belbird Future Roadmap</h3>
+        <ul class="timeline">
+            <li class="timeline-item" onclick="toggleContent(this)">
+                <div class="year">2025</div>
+                <p style="color: #333;">Development Target: Control through internet webpages/ App, Extension to the Rental market</p>
+                <div class="content">
+                    <p style="color: #333;">Revenue Target: 1 Crore Pan India Market</p>
+                </div>
+            </li>
+            <li class="timeline-item" onclick="toggleContent(this)">
+                <div class="year">2026</div>
+                <p style="color: #333;">Development Target: Camera-less surveillance with multiple cameras integrated only at strategic location</p>
+                <div class="content">
+                    <p style="color: #333;">Revenue Target: 1.5 Cr</p>
+                </div>
+            </li>
+            <li class="timeline-item" onclick="toggleContent(this)">
+                <div class="year">2027</div>
+                <p style="color: #333;">Development Target: Feasibility of introducing ad revenue on BelBird Apps</p>
+                <div class="content">
+                    <p style="color: #333;">Revenue Target: 2.5 Cr</p>
+                </div>
+            </li>
+            <li class="timeline-item" onclick="toggleContent(this)">
+                <div class="year">2028</div>
+                <p style="color: #333;">Development Target: Test bedding Ad revenue. Technical feasibility of eldercare with home sensor data.</p>
+                <div class="content">
+                    <p style="color: #333;">Voyage into the International market especially African & South East Asian markets</p>
+                    <p style="color: #333;">Revenue Target: 17 Cr based on scaleup funding of another 1.5 Cr</p>
+                </div>
+            </li>
+            <li class="timeline-item" onclick="toggleContent(this)">
+                <div class="year">2029</div>
+                <p style="color: #333;">Development Target: Launch of Eldercare, Ad platform, etc.</p>
+                <div class="content">
+                    <p style="color: #333;">Revenue Target: 27 Cr based on scaleup funding of another 1.5 Cr in the year 2028</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <p><a href="journey.html" target="_blank" style="color: #316abb;">Click here to go back to Journey Page</a></p>
+
+    <footer>
+        <p><strong>Belbird Technologies</strong></p>
+        <p>40, 7th Main, NN Farms, Geddalahalli Sanjaynagar, Bengaluru, Karnataka 560093 &#174; 2024</p>
+        <div class="footer-links">
+            <a href="/privacypolicy">Privacy Policy</a>
+            <a href="/about">About Us</a>
+            <a href="/contact" target="_blank">Contact Us</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleContent(element) {
+            element.classList.toggle('active');
+            var content = element.querySelector('.content');
+            content.style.display = (content.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

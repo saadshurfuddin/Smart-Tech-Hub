@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropdown</title>
+<link rel="stylesheet" href="static/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* Header styles */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #316abb;
+        padding: 10px 20px;
+        height: 120px;
+        color: white;
+    }
+    .nav-left {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-left li {
+        margin-right: 20px;
+    }
+    .nav-left img {
+        vertical-align: middle;
+    }
+    .nav-right {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-right li {
+        position: relative;
+        margin-left: 20px;
+    }
+    .nav-right a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    .nav-right .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        color: black;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .nav-right .dropdown-content a {
+        padding: 12px 16px;
+        display: block;
+        text-decoration: none;
+    }
+    .nav-right .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .nav-right .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="teamheader">
+            <div class="navbar">
+                <ul class="nav-left">
+                    <li><a href="/index"><img src="static/images/1294BBT_Logo_4.png" class="logo" width="200px" height="95" alt="Belbird Logo"></a></li>
+                    
+                </ul>
+<ul>
+                    <li><a href="/usermainpage">Home</a></li>
+                    <li><a href="/userviewprofile">View Profile</a></li>
+                    <!--<li><a href="/usersearchproducts">Search Products</a></li>-->
+                    <li><a href="/userviewaddtocart">View Add To Cart</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+            <br>
+            <div class="my960" style="background:#FFF;">
+                <br>
+                <h2 style="text-align:center; position:relative; top:-10px; margin-left: 65px;">BelBird M-Lock</h2>
+                
+                <p style="color: #000;">We at BelBird Technologies bring security together with keyless convenience to the homeowner through BelBird m-Lock on their mobile phones. BelBird m-Locks are hassle-free to use, provide ease of mind, convenient to make copies of software keys, and add & configure dependent users. Access can be extended to another person and access is flexible as can be configured i.e. for a full-time, limited period, or one time.</p>
+
+                <div class="appbody">      
+                    <div class="occtop">
+                        <a href="static/images/belbird_3.png">
+                            <img src="static/images/bbtloc.jpg" style="float:left; width:400px; height:300px; position:relative; top:20px; margin:20px; border:1px solid #07227998;" alt="Belbird Image">
+                        </a>
+                        <ul class="occtopright">
+                            <li style="margin-bottom:20px; margin-left:8px;">Mobile app operated
+                                <li>Auto Lock</li>
+                            </li>
+                            <li style="margin-bottom:20px; margin-left:8px;">Digital Safety Door Lock
+                                <li>Hands-free lock operation</li>
+                            </li>
+                            <li style="margin-bottom:20px; margin-left:8px;">Buzzer alarm when door is left open
+                                <li>Works in Router and Router-Less mode</li>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h2 class="gotappl"><a href="https://youtu.be/XYGd95XAeTc" target="_blank" style="text-decoration:none; color:#000; line-height:42px;">Goto Application Stories</a></h2>
+                    <h2 class="gotappl" style="width:400px; float:center; margin-left: 20px;">
+                        <a href="https://www.youtube.com/watch?v=t6VI44158Ys" target="_blank" style="text-decoration:none; color:#000; line-height:42px;">Installation Video & Tips</a>
+                    </h2>
+                    <h2 class="gotappl" style="width:200px;margin-left: 20px;">
+                        <a href="/useraddtocart?item=BelBirdM-Lock" style="text-decoration:none; color:#000; line-height:42px;" target="_blank">Add to Cart</a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
